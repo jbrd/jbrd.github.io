@@ -9,13 +9,13 @@ permalink: /about/
 Films
 -----
 
-* Avengers: Age of Ultron (Coming Soon)
+* Avengers: Age of Ultron (2015)
 * Jupiter Ascending (2015)
 * Exodus: Gods and Kings (2015)
 * Transcendence (2014)
 * The Hunger Games: Catching Fire (2013)
 * Thor: The Dark World (2013)
-* Man of Steel (2013 - Uncredited)
+* Man of Steel (2013)
 * Total Recall (2012)
 
 Games

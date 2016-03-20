@@ -1,9 +1,14 @@
 # jbrd.github.io
 My github pages repo
 
+# Requirements
+
+* Ruby
+* Bundler (http://bundler.io)
+
 # Initial setup
 
-Run the ```bundle``` command to fetch dependencies required to build and test locally.
+Run ```bundle install --path vendor/bundle``` command to fetch dependencies required to build and test locally.
 
 # Building
 

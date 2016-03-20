@@ -1,0 +1,14 @@
+# Site settings
+title: James Bird
+description: > # this means to ignore newlines until "baseurl:"
+  I am a programmer with an interest in computer graphics and animation.
+  I currently work in the film industry, writing software for feature film
+  visual effects. I have also worked in the computer games industry.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://jbrd.github.io/" # the base hostname & protocol for your site
+twitter_username: bird_james
+github_username:  jbrd
+exclude: ["vendor"]
+
+# Build settings
+markdown: kramdown

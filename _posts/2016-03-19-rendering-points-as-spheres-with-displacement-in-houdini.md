@@ -3,6 +3,8 @@ layout: post
 title: Rendering Points as Spheres With Displacement in Houdini
 ---
 
+![Rendering Points as Spheres with Displacement]({{ site.baseurl }}/images/20160319_Title.png)
+
 Here is a step-by-step guide to rendering points as spheres in Houdini
 with a displacement shader.
 
@@ -66,15 +68,22 @@ Now we can select the *Properties* node, and in the 'Parameters' panel, set the
 'Displacement Bound' parameter to 0.5, to match the magnitude of our displacement
 value.
 
+At this point, we should also add a surface shader so that the material renders
+properly. This can be easily done by placing a 'Principled Shader' VOP, which should
+automatically place a 'Compute Lighting' VOP and connect itself to the surface output,
+as shown below:
+
+![Step 9]({{ site.baseurl }}/images/20160319_Step09.png)
+
 The final thing we need to do is assign our new material to our points. To do this,
 go back to the ```/obj/``` context and select the geometry object. In the 'Parameters'
 panel, find the 'Material' tab, and underneath this, set the 'Material' path to point
 to your new material VOP.
 
-![Step 9]({{ site.baseurl }}/images/20160319_Step09.png)
+![Step 10]({{ site.baseurl }}/images/20160319_Step10.png)
 
 Now we can head back to the 'Render' panel and hit 'Render' again. This time, the
-sphere should appear half-as-small, and this is a result of the negative displacement
+sphere should appear half-as-large, and this is a result of the negative displacement
 along the surface normal.
 
-![Step 10]({{ site.baseurl }}/images/20160319_Step10.png)
+![Step 11]({{ site.baseurl }}/images/20160319_Step11.png)

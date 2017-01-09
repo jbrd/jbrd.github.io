@@ -12,3 +12,7 @@ exclude: ["Gemfile","Gemfile.lock","README.md","vendor"]
 
 # Build settings
 markdown: kramdown
+
+# Dependencies
+mathjax_path: "http://cdn.mathjax.org/mathjax/latest/MathJax.js"
+mathjax_config: "?config=TeX-AMS-MML_HTMLorMML"

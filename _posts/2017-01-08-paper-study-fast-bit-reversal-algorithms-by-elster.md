@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Paper Study - Fast Bit-Reversal Algorithms by Elster
+date: '2017-01-08 12:00:00 +0000'
 ---
 
 Given a sequence of integers in the range $$[0..2^t)$$, its bit-reversal permutation is given as a sequence of integers whose bits are in reverse order to the original sequence.

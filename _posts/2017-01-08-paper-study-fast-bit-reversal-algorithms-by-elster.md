@@ -32,25 +32,27 @@ std::array<unsigned, 1 << t> bit_reversal_permutation() {
 
 {% endhighlight %}
 
-The naive algorithm loops through every value in the sequence, and then every bit of every value, so its performance is $$O(N log_2N)$$.
+The naive algorithm loops through every value in the sequence, and then every bit of every value, so its performance is $$O(N log_2N)$$. The *Fast Bit Reversal Algorithms* paper by *Elster* [1] presents a method for computing the bit-reversal permutation in $$O(N)$$ time sequentially, by mapping values in the input sequence to values in the output sequence.
 
-The *Fast Bit Reversal Algorithms* paper by *Elster* [1] presents a method for computing the bit-reversal permutation in $$O(N)$$ time sequentially, by mapping values in the input sequence to values in the output sequence.
+The key observation made in this paper is that, as you iterate through the values of the input sequence, you can factor out values in the output sequence by a power of two, the exponent of which is dependant on the most-significant-bit of the input value:
 
-The key observation made in this paper is that, as you iterate through the values of the input sequence, you can factor out values in the output sequence by a power of two, the exponent of which is related to the most-significant-bit of the input sequence.
+$$
+X_k = C_k \cdot 2^{t-q}
+$$
 
-Running through this for $$t=3$$, defining $$q$$ as the most significant bit in the input number:
+Running through with $$t=3$$, and defining $$q$$ as the most significant bit in the input number:
 	
-|Input Number (k)|MSB (q)|Ouptut Number|Factorisation                |
-|----------------|-------|-------------|-----------------------------|
-|0 (000)         |0      |0 (000)      |$$C_k\cdot2^{t-q}=0\cdot8=0$$|
-|1 (001)         |1      |4 (100)      |$$C_k\cdot2^{t-q}=1\cdot4=4$$|
-|2 (010)         |2      |2 (010)      |$$C_k\cdot2^{t-q}=1\cdot2=2$$|
-|3 (011)         |2      |6 (110)      |$$C_k\cdot2^{t-q}=3\cdot2=6$$|
-|4 (100)         |3      |1 (001)      |$$C_k\cdot2^{t-q}=1\cdot1=1$$|
-|5 (101)         |3      |5 (101)      |$$C_k\cdot2^{t-q}=5\cdot1=5$$|
-|6 (110)         |3      |3 (011)      |$$C_k\cdot2^{t-q}=3\cdot1=3$$|
-|7 (111)         |3      |7 (111)      |$$C_k\cdot2^{t-q}=7\cdot1=7$$|
-|                |       |             |                             |
+|Input Number (k)|MSB (q)|Ouptut Number (X)|Factorisation                |
+|----------------|-------|-----------------|-----------------------------|
+|0 (000)         |0      |0 (000)          |$$C_k\cdot2^{t-q}=0\cdot8=0$$|
+|1 (001)         |1      |4 (100)          |$$C_k\cdot2^{t-q}=1\cdot4=4$$|
+|2 (010)         |2      |2 (010)          |$$C_k\cdot2^{t-q}=1\cdot2=2$$|
+|3 (011)         |2      |6 (110)          |$$C_k\cdot2^{t-q}=3\cdot2=6$$|
+|4 (100)         |3      |1 (001)          |$$C_k\cdot2^{t-q}=1\cdot1=1$$|
+|5 (101)         |3      |5 (101)          |$$C_k\cdot2^{t-q}=5\cdot1=5$$|
+|6 (110)         |3      |3 (011)          |$$C_k\cdot2^{t-q}=3\cdot1=3$$|
+|7 (111)         |3      |7 (111)          |$$C_k\cdot2^{t-q}=7\cdot1=7$$|
+|                |       |                 |                             |
 
 By factoring out a power of two, our focus is now shifted to finding the sequence of $$C_k$$
 constants (for example, when $$t=3; C=0,1,1,3,1,5,3,7$$). The paper shows that this sequence can be computed sequentially, as the following relations hold:
@@ -73,34 +75,36 @@ $$
 C_7 = C_3 + 2^q = 3 + 2^2 = 7
 $$
 
-We can therefore write an algorithm to compute future values of $$C_k$$ given the values of $$C_k$$ we have already computed:
+The paper also shows that the $$2^{t-q}$$ factor can be generated directly. Suppose you have a value $$k$$, and its most significant bit number $$q_k$$. To find the value of $$q_{2k}$$, we realise that multiplying $$k$$ by two is equivalent to left shifting the value of $$k$$ by 1, and so $$q_{2k} = q_k + 1$$.
+
+Multiplying a value by two will always result in an even number (or to put it another way, left shifting by 1 will always result in a least significant bit of zero). It therefore follows that $$q_{2k+1} = q_{2k}$$ (e.g. adding a value of 1 to the value of $$2k$$ will have no effect on its most significant bit).
+
+With this, we can now have all the information we need to directly compute the bit reversed value $$X$$ given its previous value, and after some simplification, the following relations can be found:
+
+$$
+X_{2k} = X_k \cdot 2^{-1}
+$$
+
+$$
+X_{2k+1} = X_{2k} + 2^{t-1}
+$$
+
+We can therefore write an algorithm to directly compute future values of the permutation given the values we have already computed:
 
 {% highlight cpp %}
-template <unsigned t>
-std::array<unsigned, 1 << t> bit_reversal_permutation() {
-	std::array<unsigned, 1 << t> result = {0, 1};
-	for (unsigned q=0, min=1, max=2; q < t; ++q, min = max, max <<= 1) {
-		for (unsigned k = min; k < max; ++k) {
-			if (q < t - 1) { // Compute Ck constant for 2k and 2k+1
-				const unsigned k2 = k << 1;
-				result[k2] = result[k];
-				result[k2+1] = result[k2] + max;
-			}
-			result[k] <<= (t - q - 1); // Multiply by 2^(t-q)
-		}
+template <unsigned t> std::array<unsigned, 1 << t> bit_reversal_permutation() {
+	const unsigned half_n = 1 << (t-1);
+	std::array<unsigned, 1 << t> result = {0, half_n};
+	for (unsigned n = 1; n < half_n; ++n) {
+		const unsigned index = n << 1;
+		result[index] = result[n] >> 1;
+		result[index+1] = result[index] + half_n;
 	}
 	return result;
 }
 {% endhighlight %}
 
-The algorithm iterates each input value $$k$$ sequentially, computing the odd constant $$C_k$$ for future values of $$k$$
-in advance, and then finally multiplies by $$2^{t-q}$$ to compute each final bit-reversed value.
-
-Despite running in linear time, it does require storage space of size $$N$$. It should be noted though that if you are
-performing many DFTs of the same size for example, you could generate the permutation table once and reuse it across all
-those DFTs to accelerate the cost of the bit reversal step. Since the paper was written (in 1989!) the gap between compute
-and memory performance has grown significantly larger, and the cost of repeated loads and stores could be detremental.
-Other cache-friendly bit reversal algorithms do exist, I will save those for a future post!
+Despite running in linear time, the algorithm does require storage space of size $$N$$. It should be noted though that if you are performing many DFTs of the same size, you could generate the permutation table once and reuse it across all those DFTs to accelerate the cost of the bit reversal step. Since the paper was written (in 1989!) the gap between compute and memory performance has grown significantly larger, and the cost of repeated loads and stores could be detremental on modern architectures. Other cache-friendly bit reversal algorithms do exist, I will save those for a future post!
 
 **References**
 

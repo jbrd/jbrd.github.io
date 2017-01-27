@@ -43,7 +43,7 @@ To ensure that we don't overflow this table, the modulus operator is first appli
 to the input coordinates. We can think of this as an initial hashing function:
 
 {% highlight cpp %}
-uint8_t initial_hash(double x) { return (int)floor(x) & 255; }
+int initial_hash(double x) { return (int)floor(x) & 255; }
 {% endhighlight %}
 
 A consequence of this is that the reference implementation repeats for every
@@ -55,8 +55,8 @@ example, we could choose to reuse the permutation table to perform a Pearson Has
 of the input value:
 
 {% highlight cpp %}
-uint8_t initial_hash(int32_t value) {
-    uint8_t result = 0;
+int initial_hash(int value) {
+    int result = 0;
     for (int i = 0; i < sizeof(value); ++i, value >>= 8) {
         result = p[result ^ (value & 0xff)];
     }
@@ -68,9 +68,9 @@ We could then change the first three lines of the noise function to apply this
 better hashing scheme instead:
 
 {% highlight cpp %}
-int X = initial_hash((int32_t)floor(x)),                  // FIND UNIT CUBE THAT
-    Y = initial_hash((int32_t)floor(y)),                  // CONTAINS POINT.
-    Z = initial_hash((int32_t)floor(z));
+int X = initial_hash((int)floor(x)),                  // FIND UNIT CUBE THAT
+    Y = initial_hash((int)floor(y)),                  // CONTAINS POINT.
+    Z = initial_hash((int)floor(z));
 {% endhighlight %}
 
 However, this isn't enough. The following lines that make use of the X,Y and Z 
@@ -100,9 +100,9 @@ In breaking this assumption, we must rewrite these terms as well. We'll start
 by computing the hash of the positive corners too:
 
 {% highlight cpp %}
-int XX = initial_hash((int32_t)floor(x)+1),    // FIND UNIT CUBE ADJACENT
-    YY = initial_hash((int32_t)floor(y)+1),    // TO THIS POINT.
-    ZZ = initial_hash((int32_t)floor(z)+1);
+int XX = initial_hash((int)floor(x)+1),    // FIND UNIT CUBE ADJACENT
+    YY = initial_hash((int)floor(y)+1),    // TO THIS POINT.
+    ZZ = initial_hash((int)floor(z)+1);
 {% endhighlight %}
 
 Then we can rewrite these these terms such that, for example, the expression:
@@ -120,12 +120,12 @@ double aperiodic_noise(double x, double y, double z) {
     double FX = floor(x),
            FY = floor(y),
            FZ = floor(z);
-    int X = initial_hash((int32_t)FX),            // FIND UNIT CUBE THAT
-        Y = initial_hash((int32_t)FY),            // CONTAINS POINT.
-        Z = initial_hash((int32_t)FZ);
-    int XX = initial_hash((int32_t)FX+1),         // FIND UNIT CUBE ADJACENT
-        YY = initial_hash((int32_t)FY+1),         // TO THIS POINT.
-        ZZ = initial_hash((int32_t)FZ+1);
+    int X = initial_hash((int)FX),            // FIND UNIT CUBE THAT
+        Y = initial_hash((int)FY),            // CONTAINS POINT.
+        Z = initial_hash((int)FZ);
+    int XX = initial_hash((int)FX+1),         // FIND UNIT CUBE ADJACENT
+        YY = initial_hash((int)FY+1),         // TO THIS POINT.
+        ZZ = initial_hash((int)FZ+1);
     x -= FX;                                      // FIND RELATIVE X,Y,Z
     y -= FY;                                      // OF POINT IN CUBE.
     z -= FZ;

@@ -7,7 +7,7 @@ title: Aperiodic Improved Perlin Noise
 
 In this post, I will show how the reference implementation of Improved Perlin Noise can be rewritten to yield an aperiodic noise function.
 
-The reference implementation for Improved Perlin Noise (which can be found on Ken Perlin's website here), is given (in Java) as:
+The reference implementation for Improved Perlin Noise (which can be found on Ken Perlin's website [here](http://mrl.nyu.edu/~perlin/noise/)), is given (in Java) as:
 
 {% highlight java %}
 static public double noise(double x, double y, double z) {
@@ -144,3 +144,9 @@ double aperiodic_noise(double x, double y, double z) {
                                    grad(p[BB+ZZ], x-1, y-1, z-1 ))));
 }
 {% endhighlight %}
+
+The full source listing can be found here: [https://gist.github.com/jbrd/290bcef984b3e2e0224da6acc76e7489](https://gist.github.com/jbrd/290bcef984b3e2e0224da6acc76e7489)
+
+Whilst this is more expensive than the original implementation, this should go to
+demonstrate a technique that can be used to remove the 256 unit repetition in the
+reference implementation.

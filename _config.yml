@@ -14,5 +14,7 @@ exclude: ["Gemfile","Gemfile.lock","README.md","vendor"]
 markdown: kramdown
 
 # Dependencies
+gems:
+  - jekyll-gist
 mathjax_path: "http://cdn.mathjax.org/mathjax/latest/MathJax.js"
 mathjax_config: "?config=TeX-AMS-MML_HTMLorMML"

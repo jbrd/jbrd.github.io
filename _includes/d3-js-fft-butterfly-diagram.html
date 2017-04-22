@@ -126,9 +126,8 @@ function draw_butterfly_graph(svg, logn) {
      });})
      .style("fill", "none")
      .style("stroke", "#ccc")
-     .style("stroke-width", "6px")
+     .style("stroke-width", "2px")
      .style("cursor", "pointer")
-     .style("vector-effect", "non-scaling-stroke")
      .on("mouseover", function(link){on_mouseover(link[0])})
      .on("mouseout", function(link){on_mouseout(link[0])});
   }
@@ -142,9 +141,8 @@ function draw_butterfly_graph(svg, logn) {
        .attr("r", "2%")
        .style("fill", "#fff")
        .style("stroke", "steelBlue")
-       .style("stroke-width", "3px")
+       .style("stroke-width", "1px")
        .style("cursor", "pointer")
-       .style("vector-effect", "non-scaling-stroke")
        .on("mouseover", function(node){on_mouseover(node.id)})
        .on("mouseout", function(node){on_mouseout(node.id)});
   }
@@ -162,7 +160,6 @@ function draw_butterfly_graph(svg, logn) {
        .style("font-size", "2pt")
        .style("font-weight", "bold")
        .style("cursor", "pointer")
-       .style("vector-effect", "non-scaling-stroke")
        .on("mouseover", function(node){on_mouseover(node.id)})
        .on("mouseout", function(node){on_mouseout(node.id)})
        .text(function (d) { return "N=" + (1 << d) } );
@@ -182,7 +179,6 @@ function draw_butterfly_graph(svg, logn) {
        .style("font-size", "2pt")
        .style("font-weight", "bold")
        .style("cursor", "pointer")
-       .style("vector-effect", "non-scaling-stroke")
        .on("mouseover", function(node){on_mouseover(node.id)})
        .on("mouseout", function(node){on_mouseout(node.id)})
        .text(function (d) { return d.text } );

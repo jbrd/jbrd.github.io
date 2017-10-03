@@ -6,6 +6,11 @@ permalink: /about/
 
 {{ site.description }}
 
+Products
+--------
+
+* Microsoft Paint 3D on Windows 10 (2017)
+
 Films
 -----
 
@@ -24,4 +29,3 @@ Games
 
 * Project MyWorld (become [eeGeo](http://www.eegeo.com/)) (eeGeo Ltd, Realtime Worlds Ltd - PC, Mobile)
 * Banjo Kazooie: Nuts and Bolts (Rare Ltd - Xbox 360)
-

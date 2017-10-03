@@ -2,8 +2,9 @@
 title: James Bird
 description: > # this means to ignore newlines until "baseurl:"
   I am a programmer with an interest in computer graphics and animation.
-  I currently work in the film industry, writing software for feature film
-  visual effects. I have also worked in the computer games industry.
+  I have worked in the computer games and visual effects industries, and
+  currently work at Microsoft as a Senior Software Engineer. This is my
+  personal blog and does not represent the views of my employers.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jbrd.github.io/" # the base hostname & protocol for your site
 twitter_username: bird_james

@@ -1,10 +1,11 @@
 # Site settings
 title: James Bird
 description: > # this means to ignore newlines until "baseurl:"
-  I am a programmer with an interest in computer graphics and animation.
-  I have worked in the computer games and visual effects industries, and
-  currently work at Microsoft as a Senior Software Engineer. This is my
-  personal blog and does not represent the views of my employers.
+  I am a lead software developer in the visual effects industry. I currently
+  work at DNEG, where I lead Virtual Production R&D. Prior to this, I worked
+  at a variety of software and game studios (Microsoft - Lift/Rare, Realtime 
+  Worlds, eeGeo). This is my personal blog and does not represent the views 
+  of my employers.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://jbrd.github.io/" # the base hostname & protocol for your site
 twitter_username: bird_james

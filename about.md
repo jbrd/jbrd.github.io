@@ -6,14 +6,11 @@ permalink: /about/
 
 {{ site.description }}
 
-Products
---------
-
-* Microsoft Paint 3D on Windows 10 (2017)
-
 Films
 -----
 
+* Dune (2021)
+* Death on the Nile (2021)
 * Dunkirk (2017)
 * Avengers: Age of Ultron (2015)
 * Jupiter Ascending (2015)
@@ -23,6 +20,11 @@ Films
 * Thor: The Dark World (2013)
 * Man of Steel (2013)
 * Total Recall (2012)
+
+Products
+--------
+
+* Microsoft Paint 3D on Windows 10 (2017)
 
 Games
 -----

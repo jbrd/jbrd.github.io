@@ -8,7 +8,7 @@ date: '2008-08-09 14:47:07 +0100'
 
 As part of my thesis I had to partition sets of triangles in 3D space into various acceleration structures. One such structure was the uniform grid and although there seems to be a wide variety of literature on uniform grid traversal, I had a hard job finding any literature on uniform grid construction. As a result I ended up deriving an algorithm myself, and this article presents the development of this algorithm. Hopefully these notes will be useful for people trying to solve similar problems.
 
-When deriving the algorithm, I first thought about similar problems to which a well-known solution already exists. One such problem is the rasterisation of 2D triangles onto a 2D image. In this case, the 2D image can be thought of as a 2D uniform grid with grid cell dimensions of 1×1 unit. Several algorithms exist for rasterizing a 2D triangle onto a 2D image. One such algorithm is the [scanline algorithm](http://en.wikipedia.org/wiki/Scanline_algorithm):
+When deriving the algorithm, I first thought about similar problems to which a well-known solution already exists. One such problem is the rasterisation of 2D triangles onto a 2D image. In this case, the 2D image can be thought of as a 2D uniform grid with grid cell dimensions of 1×1 unit. Several algorithms exist for rasterizing a 2D triangle onto a 2D image. One such algorithm is the [scanline algorithm](https://en.wikipedia.org/wiki/Scanline_algorithm):
 
 * Split the triangle horizontally at the middle-vertical vertex to produce (up to) two triangles
 	* A flat-bottomed triangle

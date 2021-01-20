@@ -331,7 +331,7 @@ if (delta_k == static_cast<T>(0) || (sign(d_k) != sign(delta_k) || sign(d_k1) !=
 }
 ```
 
-I believe the source of this statement is the paper [Visual Simulation of Smoke by Fedkiw et al](http://www.graphics.stanford.edu/papers/smoke/), which is cited by the Production Volume Rendering book as being the inspiration behind
+I believe the source of this statement is the paper [Visual Simulation of Smoke by Fedkiw et al](https://www.graphics.stanford.edu/papers/smoke/), which is cited by the Production Volume Rendering book as being the inspiration behind
 this scheme. This paper states the following conditions as being necessary to guarantee monotonicity:
 
 $$
@@ -568,7 +568,7 @@ monotonicity (this would lead to gradients of $$0$$ everywhere, which would not 
 Alternatively, notice that the cube with corners defined at $$(0, 0)$$ and $$(3, 3)$$ is also fully encapsulated
 by the monotonicity region. So constraining $$\alpha_i \le 3$$ and $$\beta_i \le 3$$ is also sufficient. This
 alternative is cited in the Fritsch-Carlson paper, and is also the basis of the paper
-[Non-Overshooting Hermite Cubic Splines for Keyframe Interpolation by Heckbert](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.39.6720).
+[Non-Overshooting Hermite Cubic Splines for Keyframe Interpolation by Heckbert](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.39.6720).
 
 To constrain a curve such that its $$\alpha_i$$ and $$\beta_i$$ values are inside this cube:
 
@@ -663,13 +663,13 @@ stored and pre-conditioned prior to interpolation.
 
 # References
 
-[Fedkiw, R., Stam, J. and Jensen, H.W, "Visual Simulation of Smoke", SIGGRAPH 2001, 23-30 (2001).](http://physbam.stanford.edu/~fedkiw/papers/stanford2001-01.pdf)
+[Fedkiw, R., Stam, J. and Jensen, H.W, "Visual Simulation of Smoke", SIGGRAPH 2001, 23-30 (2001).](https://physbam.stanford.edu/~fedkiw/papers/stanford2001-01.pdf)
 
 [Field3D - https://github.com/imageworks/Field3D](https://github.com/imageworks/Field3D)
 
 [Fritsch, F. N., and R. E. Carlson. “Monotone Piecewise Cubic Interpolation.” SIAM Journal on Numerical Analysis, vol. 17, no. 2, 1980, pp. 238–246.](https://www.jstor.org/stable/2156610)
 
-[Heckbert, P. "Non-Overshooting Hermite Cubic Splines for Keyframe Interpolation".](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.39.6720)
+[Heckbert, P. "Non-Overshooting Hermite Cubic Splines for Keyframe Interpolation".](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.39.6720)
 
 [Wikipedia contributors, "Monotone cubic interpolation," Wikipedia, The Free Encyclopedia, https://en.wikipedia.org/w/index.php?title=Monotone_cubic_interpolation&oldid=950478742 (accessed December 16, 2020).](https://en.wikipedia.org/w/index.php?title=Monotone_cubic_interpolation&oldid=950478742)
 

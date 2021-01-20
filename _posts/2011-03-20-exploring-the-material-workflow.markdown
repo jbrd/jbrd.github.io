@@ -11,7 +11,7 @@ For this exercise, I decided to make a pressed metal floor tile. I started off w
 ![Reference Image]({{ site.baseurl }}/images/MaterialWorkflowRef.jpg)
 
 
-**NOTE:** The above photo was taken by [Deb Malewski](http://www.flickr.com/photos/dmalewski/1783965834/). She kindly gave me permission to use the image in this article. Please do not use this image in your own works without first seeking her permission.
+**NOTE:** The above photo was taken by [Deb Malewski](https://www.flickr.com/photos/dmalewski/1783965834/). She kindly gave me permission to use the image in this article. Please do not use this image in your own works without first seeking her permission.
 
 
 As I wanted my material to be repeatable, I looked closely at the reference image to find my “square of repetition”. Using GIMP, I drew this square onto the reference image and then rotated it to yield an axis aligned reference image (on the right, below):
@@ -28,7 +28,7 @@ Having completed the geometry for a single tile, I could then discard the refere
 
 ![Geometry Tiles and Rendered As Normals]({{ site.baseurl }}/images/MaterialWorkflowNormalRender.png)
 
-From this geometry, I could then begin to generate my textures. For this material, I began by generating a normal map in 3DS Max. In order to render out the normal map, I created a low-poly version of the tile (just a simple quad) and then used 3DS Max’ Render to Texture feature to project my high-poly model onto the low-poly model. I was initially confused because although I had asked it to generate a normal map, the render that was displayed on screen was a standard render. After watching [this really good video tutorial](http://vimeo.com/7305572), it turns out that this is actually fine, and the resultant texture on disk was actually a normal map:
+From this geometry, I could then begin to generate my textures. For this material, I began by generating a normal map in 3DS Max. In order to render out the normal map, I created a low-poly version of the tile (just a simple quad) and then used 3DS Max’ Render to Texture feature to project my high-poly model onto the low-poly model. I was initially confused because although I had asked it to generate a normal map, the render that was displayed on screen was a standard render. After watching [this really good video tutorial](https://vimeo.com/7305572), it turns out that this is actually fine, and the resultant texture on disk was actually a normal map:
 
 ![Normal Map]({{ site.baseurl }}/images/MaterialWorkflowNormal.jpg)
 

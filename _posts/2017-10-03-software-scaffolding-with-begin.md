@@ -17,7 +17,7 @@ This inconsistency made it difficult to roll out wide-spread improvements across
 
 # Software Scaffolding
 
-This is where [software scaffolding](https://en.wikipedia.org/wiki/Scaffold_(programming)) can help. A *scaffold* is a small interactive program that guides the user through the creation of a new project. The concept was made popular by [Ruby on Rails](http://rubyonrails.org) which provides a `scaffold` command to automatically generate a model, view, and controller for an entity in your web app - in doing so, it creates the boilerplate code, sets up unit test modules, and enforces a consistent project structure by convention.
+This is where [software scaffolding](https://en.wikipedia.org/wiki/Scaffold_(programming)) can help. A *scaffold* is a small interactive program that guides the user through the creation of a new project. The concept was made popular by [Ruby on Rails](https://rubyonrails.org) which provides a `scaffold` command to automatically generate a model, view, and controller for an entity in your web app - in doing so, it creates the boilerplate code, sets up unit test modules, and enforces a consistent project structure by convention.
 
 My idea was to adopt something similar for new software projects. The idea was that a developer could run `begin new maya-plugin` for example, and it would ask the developer a few questions about their new project, and then construct for them the source code for a boilerplate Maya plugin, along with the code necessary to spin up Maya in batch mode for unit tests, and build scripts that were compatible with our internal build system.
 

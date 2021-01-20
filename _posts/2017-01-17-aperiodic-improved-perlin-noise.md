@@ -7,7 +7,7 @@ title: Aperiodic Improved Perlin Noise
 
 In this post, I will show how the reference implementation of Improved Perlin Noise can be rewritten to yield an aperiodic noise function.
 
-The reference implementation for Improved Perlin Noise (which can be found on Ken Perlin's website [here](http://mrl.nyu.edu/~perlin/noise/)), is given (in Java) as:
+The reference implementation for Improved Perlin Noise (which can be found on Ken Perlin's website [here](https://mrl.nyu.edu/~perlin/noise/)), is given (in Java) as:
 
 {% highlight java %}
 static public double noise(double x, double y, double z) {

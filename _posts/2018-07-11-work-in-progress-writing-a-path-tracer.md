@@ -5,7 +5,7 @@ title: 'Work In Progress: Writing a Path Tracer'
 
 Throughout my career, I have used a handful of production renderers / path-tracers (PRman, Mantra, Clarisse, etc).
 
-Having never had the chance to write a ray-tracer from scratch, I have started reading and working my way through the first volume of Peter Shirley's ['Ray-Tracing in One Weekend'](http://in1weekend.blogspot.com/2016/01/ray-tracing-in-one-weekend.html) book series.
+Having never had the chance to write a ray-tracer from scratch, I have started reading and working my way through the first volume of Peter Shirley's ['Ray-Tracing in One Weekend'](https://in1weekend.blogspot.com/2016/01/ray-tracing-in-one-weekend.html) book series.
 
 Here are a few screenshots, I'll post more as and when I make progress:
 

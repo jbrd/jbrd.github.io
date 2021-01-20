@@ -663,7 +663,7 @@ stored and pre-conditioned prior to interpolation.
 
 # References
 
-[Fedkiw, R., Stam, J. and Jensen, H.W, "Visual Simulation of Smoke", SIGGRAPH 2001, 23-30 (2001).](https://physbam.stanford.edu/~fedkiw/papers/stanford2001-01.pdf)
+[Fedkiw, R., Stam, J. and Jensen, H.W, "Visual Simulation of Smoke", SIGGRAPH 2001, 23-30 (2001).](https://www.graphics.stanford.edu/papers/smoke/)
 
 [Field3D - https://github.com/imageworks/Field3D](https://github.com/imageworks/Field3D)
 

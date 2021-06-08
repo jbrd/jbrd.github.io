@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Siggraph Talk: Colour-Managed LED Walls for Virtual Production'
+date: 2021-06-08 12:01 +0100
 ---
-
 ![Colour-Managed LED Walls for Virtual Production](https://s2021.siggraph.org/wp-content/linklings_snippets/representative_images/L6Haw6X2AE3FxzEj.jpg)
 
 I am delighted to share that I will be co-presenting a talk at Siggraph this year, entitled "Colour-Managed LED Walls for Virtual Production". In this talk, we will present DNEG's approach to managing colour when shooting an LED wall with a camera.

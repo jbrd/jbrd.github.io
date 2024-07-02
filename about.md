@@ -29,5 +29,6 @@ Products
 Games
 -----
 
+* Fable (Playground Games Ltd - In Development)
 * Project MyWorld (become [eeGeo](http://www.eegeo.com/)) (eeGeo Ltd, Realtime Worlds Ltd - PC, Mobile)
-* Banjo Kazooie: Nuts and Bolts (Rare Ltd - Xbox 360)
+* Banjo Kazooie: Nuts and Bolts (Rare Ltd, 2007 - Xbox 360)

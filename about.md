@@ -10,6 +10,7 @@ Games
 -----
 
 * Fable (Playground Games Ltd, In Development)
+* Forza Horizon 6 (Playground Games Ltd, 2026, Xbox)
 * Banjo Kazooie: Nuts and Bolts (Rare Ltd, 2007 - Xbox 360)
 
 Films
